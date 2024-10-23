@@ -5,6 +5,9 @@ import HomeScreen from './components/HomeScreen';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import ExamScreen from './components/ExamScreen';
+import Timer from './components/Timer';
+import Questions from './components/Questions';
+import ResultScreen from './components/ResultScreen';
 
 const App = () => {
   const Stack = createStackNavigator();
@@ -13,6 +16,9 @@ const App = () => {
       <Stack.Navigator>
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
         <Stack.Screen name="ExamScreen" component={ExamScreen} />
+        <Stack.Screen name="Timer" component={Timer} />
+        <Stack.Screen name="Questions" component={Questions} />
+        <Stack.Screen name="ResultScreen" component={ResultScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

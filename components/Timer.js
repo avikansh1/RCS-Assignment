@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, Button} from 'react-native';
+import {View, Text} from 'react-native';
 
 const Timer = ({onFinish}) => {
   const [timeLeft, setTimeLeft] = useState(1800); // Example: 1800 seconds (30 minutes)
@@ -24,8 +24,8 @@ const Timer = ({onFinish}) => {
   };
 
   return (
-    <View>
-      <Text>Time Left: {formatTime(timeLeft)}</Text>
+    <View style={{padding: 10}}>
+      <Text style={{fontSize: 18}}>Time Left: {formatTime(timeLeft)}</Text>
     </View>
   );
 };
