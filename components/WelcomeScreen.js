@@ -1,7 +1,7 @@
 import {ImageBackground, Pressable, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 
-const WelcomeScreen = () => {
+const WelcomeScreen = ({navigation}) => {
   return (
     <ImageBackground
       style={styles.background}
@@ -16,7 +16,9 @@ const WelcomeScreen = () => {
             . Keep a track of your bookings
           </Text>
         </View>
-        <Pressable style={styles.button}>
+        <Pressable
+          onPress={() => navigation.navigate('LoginScreen')}
+          style={styles.button}>
           <Text style={styles.buttonText}>Get Started</Text>
         </Pressable>
       </View>

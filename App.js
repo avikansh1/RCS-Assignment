@@ -9,6 +9,7 @@ import Timer from './components/Timer';
 import Questions from './components/Questions';
 import ResultScreen from './components/ResultScreen';
 import WelcomeScreen from './components/WelcomeScreen';
+import LoginScreen from './components/LoginScreen';
 
 const App = () => {
   const Stack = createStackNavigator();
@@ -21,6 +22,7 @@ const App = () => {
         <Stack.Screen name="Questions" component={Questions} />
         <Stack.Screen name="ResultScreen" component={ResultScreen} /> */}
         <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
+        <Stack.Screen name="LoginScreen" component={LoginScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
