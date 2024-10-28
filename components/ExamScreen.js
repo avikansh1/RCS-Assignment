@@ -1,15 +1,16 @@
 import React, {useState} from 'react';
-import {View, Button, Alert} from 'react-native';
+import {View, Button} from 'react-native';
 import Timer from './Timer';
 import Questions from './Questions';
 import {useNavigation} from '@react-navigation/native';
 
 const ExamScreen = () => {
   const [answers, setAnswers] = useState({});
+  const [currentPage, setCurrentPage] = useState(1); // Track current page
+  const questionsPerPage = 10; // 10 questions per screen
   const navigation = useNavigation();
 
-  // Dummy questions data
-  // Dummy questions data
+  // Dummy questions data (unchanged)
   const questions = [
     {
       id: 1,
@@ -303,7 +304,10 @@ const ExamScreen = () => {
     },
   ];
 
-  // Handle exam finish (time runs out or user submits)
+  // Calculate total pages
+  const totalPages = Math.ceil(questions.length / questionsPerPage);
+
+  // Handle exam finish (submit or timer finish)
   const handleExamFinish = () => {
     let score = 0;
 
@@ -320,20 +324,41 @@ const ExamScreen = () => {
     navigation.navigate('ResultScreen', {score, totalQuestions});
   };
 
+  // Get current page's questions
+  const currentQuestions = questions.slice(
+    (currentPage - 1) * questionsPerPage,
+    currentPage * questionsPerPage,
+  );
+
   return (
-    <View>
-      {/* Timer Component */}
+    <View style={{flex: 1, padding: 10}}>
+      {/* Timer */}
       <Timer onFinish={handleExamFinish} />
 
-      {/* Questions Component */}
+      {/* Questions for current page */}
       <Questions
-        questions={questions}
+        questions={currentQuestions}
         answers={answers}
         setAnswers={setAnswers}
       />
 
-      {/* Submit Button */}
-      <Button title="Submit Exam" onPress={handleExamFinish} />
+      {/* Pagination buttons */}
+      <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+        {currentPage > 1 && (
+          <Button
+            title="Previous"
+            onPress={() => setCurrentPage(currentPage - 1)}
+          />
+        )}
+        {currentPage < totalPages ? (
+          <Button
+            title="Next"
+            onPress={() => setCurrentPage(currentPage + 1)}
+          />
+        ) : (
+          <Button title="Submit Exam" onPress={handleExamFinish} />
+        )}
+      </View>
     </View>
   );
 };

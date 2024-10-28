@@ -11,7 +11,7 @@ const Questions = ({questions, answers, setAnswers}) => {
 
   const renderQuestion = ({item}) => (
     <View key={item.id} style={{marginVertical: 10}}>
-      <Text style={{fontSize: 18}}>{item.question}</Text>
+      <Text style={{fontSize: 18, color: 'black'}}>{item.question}</Text>
       {item.options.map(option => (
         <TouchableOpacity
           key={option}
@@ -23,7 +23,7 @@ const Questions = ({questions, answers, setAnswers}) => {
             marginVertical: 5,
             borderRadius: 5,
           }}>
-          <Text>{option}</Text>
+          <Text style={{color: 'black'}}>{option}</Text>
         </TouchableOpacity>
       ))}
     </View>
