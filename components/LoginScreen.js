@@ -5,12 +5,13 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
+  Pressable,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Mail from 'react-native-vector-icons/AntDesign';
 import Phone from 'react-native-vector-icons/Ionicons';
 
-const LoginScreen = () => {
+const LoginScreen = ({navigation}) => {
   return (
     <LinearGradient
       colors={['#CFCFDD', '#FFFFFF']} // Updated gradient colors
@@ -63,9 +64,11 @@ const LoginScreen = () => {
           />
         </View>
 
-        <TouchableOpacity style={styles.button}>
+        <Pressable
+          onPress={() => navigation.navigate('DashBoardScreen')}
+          style={styles.button}>
           <Text style={styles.buttonText}>Login</Text>
-        </TouchableOpacity>
+        </Pressable>
       </View>
     </LinearGradient>
   );
