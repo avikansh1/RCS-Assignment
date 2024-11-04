@@ -35,10 +35,11 @@ const LoginScreen = ({navigation}) => {
             borderColor: '#262161',
             marginTop: 10,
           }}>
-          <Mail name="mail" size={20} />
+          <Mail name="mail" size={20} color="#000" />
           <TextInput
             style={styles.input}
             placeholder="Enter your mobile number"
+            placeholderTextColor="#000"
           />
         </View>
 
@@ -56,10 +57,11 @@ const LoginScreen = ({navigation}) => {
             borderRadius: 10,
             borderColor: '#262161',
           }}>
-          <Phone name="phone-portrait-outline" size={20} />
+          <Phone name="phone-portrait-outline" size={20} color="#000" />
           <TextInput
             style={styles.input}
             placeholder="Enter your password"
+            placeholderTextColor="#000"
             secureTextEntry
           />
         </View>
@@ -103,6 +105,7 @@ const styles = StyleSheet.create({
   input: {
     padding: 5,
     marginLeft: 10,
+    color: '#000',
   },
   button: {
     backgroundColor: '#4A3D93',

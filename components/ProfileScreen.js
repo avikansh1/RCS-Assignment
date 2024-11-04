@@ -30,13 +30,18 @@ const ProfileScreen = ({navigation}) => {
 
       <View style={styles.inputContainer}>
         <Text style={styles.label}>Name</Text>
-        <TextInput style={styles.input} placeholder="Alex Turner" />
+        <TextInput
+          style={styles.input}
+          placeholder="Alex Turner"
+          placeholderTextColor="#000"
+        />
 
         <Text style={styles.label}>Mobile</Text>
         <TextInput
           style={styles.input}
           placeholder="+89 2929 29292"
           keyboardType="phone-pad"
+          placeholderTextColor="#000"
         />
 
         <Text style={styles.label}>Password</Text>
@@ -45,6 +50,7 @@ const ProfileScreen = ({navigation}) => {
             style={styles.input}
             placeholder="**********"
             secureTextEntry
+            placeholderTextColor="#000"
           />
           <Arrow name="eyeo" size={20} color="#000" style={styles.eyeIcon} />
         </View>
@@ -70,6 +76,7 @@ const styles = StyleSheet.create({
     marginLeft: 130,
     fontSize: 17,
     fontWeight: '900',
+    color: '#000',
   },
   profileImage: {
     alignSelf: 'center',

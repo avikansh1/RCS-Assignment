@@ -30,13 +30,14 @@ const styles = StyleSheet.create({
   },
   headers: {
     flexDirection: 'row',
-    padding: 10,
+    padding: 5,
     alignItems: 'center',
   },
   headerText: {
-    marginLeft: 150,
-    fontSize: 17,
+    marginLeft: 120,
+    fontSize: 20,
     fontWeight: '900',
+    color: '#000',
   },
   image: {
     marginTop: 230,
@@ -47,5 +48,6 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginTop: 20,
     fontSize: 15,
+    color: '#000',
   },
 });

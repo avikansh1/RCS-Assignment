@@ -1,5 +1,5 @@
-import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import {StyleSheet, Text, View, Platform} from 'react-native';
+import React, {useEffect} from 'react';
 import Icon from 'react-native-vector-icons/AntDesign';
 import HomeScreen from './components/HomeScreen';
 import {createStackNavigator} from '@react-navigation/stack';
@@ -16,6 +16,7 @@ import User from 'react-native-vector-icons/AntDesign';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import ProfileScreen from './components/ProfileScreen';
 import QRScreen from './components/QRScreen';
+import SplashScreen from 'react-native-splash-screen'; // Import SplashScreen
 
 const App = () => {
   const Tab = createBottomTabNavigator();
@@ -56,6 +57,11 @@ const App = () => {
   }
 
   const Stack = createStackNavigator();
+
+  useEffect(() => {
+    if (Platform.OS === 'android') SplashScreen.hide();
+  }, []);
+
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>

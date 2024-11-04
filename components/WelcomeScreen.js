@@ -10,11 +10,10 @@ const WelcomeScreen = ({navigation}) => {
         <View style={styles.textContainer}>
           <Text style={styles.welcomeText}>Welcome User</Text>
           <Text style={styles.descriptionText}>
-            Master cleanliness effortlessly with our management app
+            Master cleanliness effortlessly with our management app. Keep a
+            track of your bookings
           </Text>
-          <Text style={styles.descriptionText}>
-            . Keep a track of your bookings
-          </Text>
+          {/* <Text style={styles.descriptionText}></Text> */}
         </View>
         <Pressable
           onPress={() => navigation.navigate('LoginScreen')}
@@ -44,7 +43,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   textContainer: {
-    padding: 10,
+    padding: 8,
     width: '100%',
     // backgroundColor: 'red',
     justifyContent: 'space-between',
@@ -57,7 +56,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   descriptionText: {
-    fontSize: 13,
+    fontSize: 15,
     fontWeight: '600',
     lineHeight: 20,
     color: '#ffffff',
